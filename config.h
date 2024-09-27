@@ -13,7 +13,7 @@ static int extrabar           = 1;        /* 0 means no extra bar */
 static char statussep         = ';';      /* separator between statuses */
 static char font[]          = { "monospace:size=10" };
 static char dmenufont[]       = "monospace:size=10";
-static unsigned int baralpha        = 0xd0;
+static unsigned int baralpha        = 0xE6;
 static unsigned int borderalpha     = OPAQUE;
 static const char *fonts[]          = { font, "NotoColorEmoji:size=10:antialias=true:autohint=true" };
 static char normbgcolor[]           = "#222222";
@@ -118,7 +118,7 @@ static Key keys[] = {
 	{ MODKEY,								XK_space,		zoom,					{0} },
 	{ MODKEY|ShiftMask,					XK_space,		togglefloating,	{0} },
 	{ MODKEY,								XK_BackSpace,	spawn,				SHCMD("sysact") },
-	{ ShiftMask,							XK_Print,		spawn,				SHCMD("sysact") },
+	{ ShiftMask,							XK_Print,		spawn,				SHCMD("maimpick") },
 	{ MODKEY,								XK_Print,		spawn,				SHCMD("dmenurecord") },
 	{ MODKEY|ShiftMask,					XK_Print,		spawn,				SHCMD("dmenurecord kill") },
 	{ MODKEY,								XK_minus,		spawn,				SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-") },
@@ -133,6 +133,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY,								XK_F3,	spawn,				SHCMD("displayselect") },
 };
 
 /* button definitions */
