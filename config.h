@@ -96,13 +96,15 @@ static Key keys[] = {
 	/* modifier								key				function				argument */
 	{ MODKEY,								XK_Return,		spawn,				{ .v = termcmd } },
 	{ MODKEY|ShiftMask,					XK_Return,		spawn,				SHCMD("samedir") },
+	{ MODKEY,								XK_p,				spawn,				SHCMD("passmenu") },
 	{ MODKEY,								XK_q,				killclient,			{0} },
 	{ MODKEY,								XK_d,				spawn,				{.v = dmenucmd } },
-	{ MODKEY,								XK_n,				spawn,				SHCMD(TERMINAL "-e newsboat") },
+	{ MODKEY,								XK_n,				spawn,				SHCMD(TERMINAL" -e newsboat") },
 	{ MODKEY,								XK_b,				spawn,				SHCMD("$BROWSER") },
+	{ MODKEY|ShiftMask,					XK_b,				spawn,				SHCMD(TERMINAL" -e bookmarkthis") },
+	{ MODKEY,								XK_Insert,		spawn,				SHCMD("bookmarkthis -i") },
 	{ MODKEY,								XK_e,				spawn,				SHCMD("$EMAIL") },
-	{ MODKEY,								XK_w,				spawn,				SHCMD(TERMINAL "-e sudo nmtui") },
-	{ MODKEY|ShiftMask,					XK_b,				spawn,				SHCMD(TERMINAL "-e bookmarkthis") },
+	{ MODKEY,								XK_w,				spawn,				SHCMD(TERMINAL" -e sudo nmtui") },
 	{ MODKEY,								XK_j,				focusstack,			{.i = +1 } },
 	{ MODKEY,								XK_k,				focusstack,			{.i = -1 } },
 	{ MODKEY,								XK_h,				setmfact,  			{.f = -0.05} },
@@ -121,8 +123,8 @@ static Key keys[] = {
 	{ ShiftMask,							XK_Print,		spawn,				SHCMD("maimpick") },
 	{ MODKEY,								XK_Print,		spawn,				SHCMD("dmenurecord") },
 	{ MODKEY|ShiftMask,					XK_Print,		spawn,				SHCMD("dmenurecord kill") },
-	{ MODKEY,								XK_minus,		spawn,				SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-") },
-	{ MODKEY,								XK_equal,		spawn,				SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+") },
+	{ MODKEY,								XK_minus,		spawn,				SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; kill -36 $(pidof dwmblocks)") },
+	{ MODKEY,								XK_equal,		spawn,				SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+; kill -36 $(pidof dwmblocks)") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
