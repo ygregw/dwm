@@ -123,6 +123,7 @@ static Key keys[] = {
 	{ ShiftMask,							XK_Print,		spawn,				SHCMD("maimpick") },
 	{ MODKEY,								XK_Print,		spawn,				SHCMD("dmenurecord") },
 	{ MODKEY|ShiftMask,					XK_Print,		spawn,				SHCMD("dmenurecord kill") },
+	{ MODKEY,								XK_grave,		spawn,				SHCMD("dmenuunicode") },
 	{ MODKEY,								XK_minus,		spawn,				SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-; kill -36 $(pidof dwmblocks)") },
 	{ MODKEY,								XK_equal,		spawn,				SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+; kill -36 $(pidof dwmblocks)") },
 	TAGKEYS(                        XK_1,                      0)
