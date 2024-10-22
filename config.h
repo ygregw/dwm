@@ -96,6 +96,7 @@ static Key keys[] = {
 	/* modifier								key				function				argument */
 	{ MODKEY,								XK_Return,		spawn,				{ .v = termcmd } },
 	{ MODKEY|ShiftMask,					XK_Return,		spawn,				SHCMD("samedir") },
+	{ MODKEY,								XK_r,				spawn,				SHCMD("sb-refresh") },
 	{ MODKEY,								XK_p,				spawn,				SHCMD("passmenu") },
 	{ MODKEY,								XK_q,				killclient,			{0} },
 	{ MODKEY,								XK_d,				spawn,				{.v = dmenucmd } },
