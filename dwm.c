@@ -862,6 +862,10 @@ drawbar(Monitor *m)
 		etwl = TEXTW(estextl);
 		drw_text(drw, 0, 0, etwl, bh, 0, estextl, 0);
 		drw_map(drw, m->extrabarwin, 0, 0, m->ww, bh);
+	} else {
+		/* clear default bar draw buffer by drawing a blank rectangle */
+		drw_rect(drw, 0, 0, m->ww, bh, 1, 1);
+		drw_map(drw, m->extrabarwin, 0, 0, m->ww, bh);
 	}
 }
 
